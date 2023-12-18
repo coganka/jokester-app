@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokester</title>
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: Monaco, monospace;
+        }
+
+        h2 a {
+            text-decoration: none;
+        }
+
+        #joke_title_id:visited {
+            color:blue;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(39, 39, 39);
+        }
+  
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: rgb(63, 63, 63);
+        }
+
+        .active {
+            background-color: #4d4d4d;
+        }
+
+        .random_joke_container {
+            border: 2px solid #f1f1f1;
+            border-radius: 10px;
+            margin: 30px;
+            padding: 5px 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .mainpage_container {
+            display: grid;
+            justify-content: center;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/trending">Trending</a></li>
+        <li><a href="/makejoke">Make a Joke</a></li>
+        <li><a href="/jokes/all-jokes">All Jokes</a></li>
+        <li><a href="/auth/logout">Log Out</a></li>
+    </ul> 
+
+    
+</body>
+</html>

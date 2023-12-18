@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Jokes</title>
+
+
+  <style>
+
+    h1 {
+      font-family: Monaco, monospace;
+    }
+
+    .all_jokes_container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Monaco, monospace;
+    }
+
+    ul {
+      max-width: fit-content;
+    }
+
+    .jokes_container {
+      border: 2px solid #f1f1f1;
+      border-radius: 10px;
+      margin: 5px;
+      padding: 10px 20px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    #joke_id {
+      text-decoration: none;
+    }
+
+    a:visited {
+        color:blue;
+    }
+
+    .footer_page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+    }
+
+    #back_page {
+      padding: 40px 40px;
+    }
+
+    #next_page {
+      padding: 30px 40px;
+    }
+
+  </style>
+  
+
+</head>
+<body>
+  
+  <a href="/">Back</a>
+
+  <h1>All Jokes</h1>
+    <div class="all_jokes_container">
+      <ul>
+        <% for(var i = 0; i < allJokes.length; i++) { %>
+          <br>
+          <ul class="jokes_container">
+              <a id="joke_id" href="/jokes/<%= allJokes[i]._id %> "><%= allJokes[i].title %></a>
+              <li><%= allJokes[i].body %></li>
+              <br>
+              <li>@<%= allJokes[i].author %></li>
+              <li>&#x1F44D <%= allJokes[i].likes %></li>
+          </ul>
+          <br>
+        <% } %>
+
+      </ul>
+      <br><br>
+    </div>
+
+    <div class="footer_page">
+      <% if (numPage !== 1) { %>
+        <a id="back_page" href="/jokes/all-jokes?page=<%= numPage - 1 %>">Back</a>
+      <% } %>
+      <a id="next_page" href="/jokes/all-jokes?page=<%= numPage + 1 %>">Next</a>
+    </div>
+</body>
+</html>

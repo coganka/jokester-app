@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+
+    <style>
+
+    form {
+        border: 2px solid #f1f1f1;
+        border-radius: 10px;
+        margin: 20px;
+        padding: 10px 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    /*assign full width inputs*/
+     
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #2a2a2a9e;
+        box-sizing: border-box;
+    }
+    /*set a style for the buttons*/
+     
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    .signup_container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        font-family: Monaco, monospace;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color:blue;
+    }
+
+    </style>
+
+
+</head>
+<body>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="signup_container">
+        <form action="/auth/signup" method="POST">
+            <a href="/">Go Back</a><br><br><br>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required><br>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required><br><br>
+            <button>Sign Up</button>
+            <br><br>
+            <a href="/auth/login">Already have an account?</a>
+        </form>
+    </div>
+</body>
+</html>

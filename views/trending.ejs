@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending</title>
+
+  <style>
+
+    h1 {
+      font-family: Monaco, monospace;
+    }
+
+    .trending_jokes {
+      margin: 5px;
+      padding: 10px 1px;
+      font-family: Monaco, monospace;
+    }
+
+    #joke_link {
+        background-color: #969899;
+        color: white;
+        padding: 10px 15px;
+        margin: 5px 0;
+        cursor: pointer;
+        width: auto;
+        border-radius: 15px;
+        text-decoration: none;
+    }
+
+    li {
+      list-style-type: none;
+      padding: 0px 3px;
+    }
+
+  </style>
+
+</head>
+<body>
+  
+  <a href="/">Back</a>
+
+  <br>
+  <br>
+
+  <h1>Trending</h1>
+
+  <div class="trending_jokes">
+    <ul>
+        <% for(var i = 0; i < jokes.length; i++) { %>
+          <% count++ %>
+          <br>
+          <ul>
+              <li>&#x1F525<a id="joke_link" href="/jokes/<%= jokes[i]._id %> "><%= jokes[i].title %></a></li>
+              <br>
+          </ul>
+          <% if (count == 10) { %>
+          <%    break; %>
+          <% } %>
+        <% } %>
+
+    </ul>
+  </div>
+
+</body>
+</html>

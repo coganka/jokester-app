@@ -1,0 +1,16 @@
+<%- include('./partials/head.ejs') %> 
+
+
+<br>
+<br>
+<br>
+<div class="mainpage_container">
+    <h1>here's a random joke from users</h1>
+    <br>
+    <div class="random_joke_container">
+        <h2><a id="joke_title_id" href="/jokes/<%= jokes[randId]._id %>"><%= jokes[randId].title %></a></h2>
+        <h3> <%= jokes[randId].body %></h3><br>
+        <h4>@<%= jokes[randId].author %></h4>
+        <h4>&#x1F44D <%= jokes[randId].likes %></h4>
+    </div>
+</div>

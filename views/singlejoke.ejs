@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= joke.title %></title>
+
+
+    <style>
+
+    button {
+        background-color: #dfdede;
+        color: white;
+        padding: 10px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: auto;
+        border-radius: 25px;
+        font-size : 30px;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }   
+
+    .single_joke_container {
+        border: 2px solid #f1f1f1;
+        border-radius: 10px;
+        margin: 25px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+        justify-content: center;
+        align-items: center;
+        font-family: Monaco, monospace;
+    }
+
+    a:visited {
+        color:blue;
+    }
+
+    </style>
+
+
+</head>
+<body>
+    <a href="/">Back</a>
+    <br>
+    <br>
+    <div class="single_joke_container">
+        <h1><%= joke.title %> </h1>
+        <p><%= joke.body %></p>
+        <br><br>
+        <h3>@<%= joke.author %></h3>
+        <h3>likes: <%= joke.likes %></h3>
+        <form action="/jokes/<%= joke._id %>?_method=PUT" method="POST">
+            <button>&#x1F44D</button>
+        </form>
+    </div>
+</body>
+</html>
